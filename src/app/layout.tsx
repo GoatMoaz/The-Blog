@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/provider/theme-provider";
+import Hero from "@/components/layouts/hero";
 import { Navbar } from "@/components/layouts/Navbar";
 
 const geistSans = Geist({
@@ -37,6 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <Hero />
           {children}
         </ThemeProvider>
       </body>

@@ -1,6 +1,5 @@
 "use client";
 
-import Hero from "@/components/home/hero";
 import Blogs from "@/components/home/recent-blogs";
 import { usePosts } from "@/hooks/usePosts";
 import AllBlogs from "@/components/home/all-blogs";
@@ -11,7 +10,6 @@ export default function Home() {
     <main className="min-h-screen">
       <div className="container mx-auto py-16">
         {/* Hero Section */}
-        <Hero loading={loading} />
 
         {/* Recent Blog Posts Section */}
         <Blogs posts={posts} loading={loading} />
