@@ -8,6 +8,7 @@ import PostsLoader from "@/components/loaders/posts-loader";
 import PostsHeader from "@/components/posts/posts-header";
 import Posts from "@/components/posts/posts";
 import PaginationBar from "@/components/posts/pagination-bar";
+import Error from "@/components/ui/error";
 
 const POSTS_PER_PAGE = 9;
 
@@ -81,14 +82,7 @@ function PostsPageContent() {
   };
 
   if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-red-500 mb-4">Error</h1>
-          <p className="text-gray-600">{error}</p>
-        </div>
-      </div>
-    );
+    return <Error message={error} />;
   }
 
   return (
