@@ -9,8 +9,6 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <div className="container mx-auto py-16">
-        {/* Hero Section */}
-
         {/* Recent Blog Posts Section */}
         <Blogs posts={posts} loading={loading} />
 
