@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Post } from "@/interfaces/PostInterface";
 
-export function usePosts() {
+export function useFetchPosts() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
