@@ -10,11 +10,12 @@ export default function AnimatedItem({
   delay = 0,
   threshold = 0.3,
   className = "",
+  onClick,
 }: AnimatedItemProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
-  const { fadeIn, slideInLeft, slideInRight, scaleIn } = useGSAP();
+  const { fadeIn, slideInLeft, slideInRight, slideInUp, scaleIn } = useGSAP();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -56,6 +57,9 @@ export default function AnimatedItem({
         case "slideInRight":
           slideInRight(element, 1, delay);
           break;
+        case "slideInUp":
+          slideInUp(element, 1, delay);
+          break;
         case "scaleIn":
           scaleIn(element, 0.8, delay);
           break;
@@ -68,10 +72,23 @@ export default function AnimatedItem({
         }
       }, (delay + 1) * 1000);
     }
-  }, [isVisible, animation, delay, fadeIn, slideInLeft, slideInRight, scaleIn]);
+  }, [
+    isVisible,
+    animation,
+    delay,
+    fadeIn,
+    slideInLeft,
+    slideInRight,
+    slideInUp,
+    scaleIn,
+  ]);
 
   return (
-    <div ref={elementRef} className={`opacity-0 ${className}`}>
+    <div
+      ref={elementRef}
+      className={`opacity-0 ${className}`}
+      onClick={onClick}
+    >
       {children}
     </div>
   );

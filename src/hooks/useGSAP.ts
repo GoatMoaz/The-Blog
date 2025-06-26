@@ -66,6 +66,16 @@ export function useGSAP() {
     );
   };
 
+  // Slide in from bottom (up)
+  const slideInUp = (element: string | Element, duration = 1, delay = 0) => {
+    const isMobile = window.innerWidth < 768;
+    gsap.fromTo(
+      element,
+      { opacity: 0, y: isMobile ? 20 : 30 },
+      { opacity: 1, y: 0, duration, delay, ease: "power2.out" }
+    );
+  };
+
   // Scale in animation
   const scaleIn = (element: string | Element, duration = 0.8, delay = 0) => {
     gsap.fromTo(
@@ -110,6 +120,9 @@ export function useGSAP() {
         case "slideInRight":
           slideInRight(element, 1, delay);
           break;
+        case "slideInUp":
+          slideInUp(element, 1, delay);
+          break;
         case "scaleIn":
           scaleIn(element, 0.8, delay);
           break;
@@ -129,6 +142,7 @@ export function useGSAP() {
     fadeIn,
     slideInLeft,
     slideInRight,
+    slideInUp,
     scaleIn,
     staggerIn,
     animateOnScroll,
