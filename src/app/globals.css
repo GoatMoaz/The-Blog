@@ -37,6 +37,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-badge-primary: var(--badge-primary);
+  --color-badge-secondary: var(--badge-secondary);
+  --color-content-primary: var(--content-primary);
+  --color-badge-tertiary: var(--badge-tertiary);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -76,11 +80,15 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --badge-primary: oklch(0.498 0.1953 291.5);
+  --badge-secondary: oklch(0.451 0.2216 272.3);
+  --badge-tertiary: oklch(0.5363 0.2104 354.83);
+  --content-primary: oklch(0.5444 0.035 265.11);
 }
 
 .dark {
   --background: oklch(0.1663 0.0382 272.14);
-  --foreground: oklch(0.985 0 0); 
+  --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -110,6 +118,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --badge-primary: oklch(0.498 0.1953 291.5);
+  --badge-secondary: oklch(0.451 0.2216 272.3);
+  --badge-tertiary: oklch(0.5363 0.2104 354.83);
+  --content-primary: oklch(0.8229 0.0163 266.26);
 }
 
 @layer base {
