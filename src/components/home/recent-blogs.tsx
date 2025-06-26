@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import RightBlog from "@/components/home/right-blog";
 import BlogContent from "@/components/home/blog-content";
