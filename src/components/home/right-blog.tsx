@@ -16,7 +16,15 @@ export default function RightBlog({
 }) {
   return (
     <div className="flex flex-col md:flex-row gap-6 cursor-pointer">
-      <Image src={image} alt="recent2" className="w-full" />
+      <div className="relative w-full md:w-72 h-48 flex-shrink-0">
+        <Image
+          src={image}
+          alt={author}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 192px"
+        />
+      </div>
       <div>
         <BlogContent
           author={author}
@@ -25,8 +33,7 @@ export default function RightBlog({
           description={description}
           badges={[
             { content: "Design", color: "primary" },
-            { content: "Research", color: "secondary" },
-            { content: "Presentation", color: "tertiary" },
+            { content: "Research", color: "tertiary" },
           ]}
         />
       </div>
