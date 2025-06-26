@@ -17,8 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "The Blog - Modern TypeScript Blog",
-  description:
-    "A modern blog built with Next.js, TypeScript, Tailwind CSS, and GSAP animations",
+  description: "A modern blog built with Next.js.",
 };
 
 export default function RootLayout({
