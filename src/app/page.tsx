@@ -1,11 +1,11 @@
 "use client";
 
 import Blogs from "@/components/home/recent-blogs";
-import { usePosts } from "@/hooks/usePosts";
+import { useFetchPosts } from "@/hooks/useFetchPosts";
 import AllBlogs from "@/components/home/all-blogs";
 
-export default function Home() {
-  const { posts, loading } = usePosts();
+export default function HomePage() {
+  const { posts, loading } = useFetchPosts();
   return (
     <main className="min-h-screen">
       <div className="container mx-auto py-16">

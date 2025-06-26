@@ -4,6 +4,7 @@ import BlogContent from "@/components/home/blog-content";
 import AnimatedItem from "@/components/ui/animated-item";
 import AllBlogsLoader from "@/components/loaders/all-blogs-loader";
 import FancyButton from "@/components/ui/fancy-button";
+import { useRouter } from "next/navigation";
 
 export default function AllBlogs({
   posts,
@@ -12,9 +13,12 @@ export default function AllBlogs({
   posts: Post[];
   loading: boolean;
 }) {
+  const router = useRouter();
+
   if (loading) {
     return <AllBlogsLoader />;
   }
+
   return (
     <section className="px-2 sm:px-4">
       <h1 className="font-semibold text-2xl mb-8">All blog posts</h1>
@@ -26,6 +30,7 @@ export default function AllBlogs({
             delay={0.1 + idx * 0.1}
             key={post.id}
             className="p-4 cursor-pointer"
+            onClick={() => router.push(`/posts/${post.id}`)}
           >
             <Image
               src={post.image}

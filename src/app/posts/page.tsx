@@ -3,7 +3,7 @@
 import { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import AnimatedItem from "@/components/ui/animated-item";
-import { usePosts } from "@/hooks/usePosts";
+import { useFetchPosts } from "@/hooks/useFetchPosts";
 import PostsLoader from "@/components/loaders/posts-loader";
 import PostsHeader from "@/components/posts/posts-header";
 import Posts from "@/components/posts/posts";
@@ -12,7 +12,7 @@ import PaginationBar from "@/components/posts/pagination-bar";
 const POSTS_PER_PAGE = 9;
 
 function PostsPageContent() {
-  const { posts, loading, error } = usePosts();
+  const { posts, loading, error } = useFetchPosts();
   const searchParams = useSearchParams();
 
   // Get initial page from URL or default to 1

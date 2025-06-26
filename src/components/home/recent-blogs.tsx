@@ -4,6 +4,7 @@ import BlogContent from "@/components/home/blog-content";
 import AnimatedItem from "@/components/ui/animated-item";
 import { Post } from "@/interfaces/PostInterface";
 import BlogLoader from "@/components/loaders/blog-loader";
+import { useRouter } from "next/navigation";
 
 export default function Blogs({
   posts,
@@ -12,6 +13,7 @@ export default function Blogs({
   posts: Post[];
   loading: boolean;
 }) {
+  const router = useRouter();
   if (loading) {
     return <BlogLoader />;
   }
@@ -28,6 +30,7 @@ export default function Blogs({
           animation="slideInLeft"
           delay={0.1}
           className="flex flex-col w-full xl:w-1/2 cursor-pointer"
+          onClick={() => router.push(`/posts/${posts[0].id}`)}
         >
           <div className="w-full h-64 md:h-80 mb-4">
             <Image
@@ -57,7 +60,11 @@ export default function Blogs({
 
         {/* Right handside */}
         <div className="flex flex-col gap-8 w-full xl:w-1/2">
-          <AnimatedItem animation="slideInRight" delay={0.2}>
+          <AnimatedItem
+            animation="slideInRight"
+            delay={0.2}
+            onClick={() => router.push(`/posts/${posts[10].id}`)}
+          >
             <RightBlog
               image={posts[10].image}
               title={posts[10]?.title}
@@ -71,7 +78,11 @@ export default function Blogs({
             />
           </AnimatedItem>
 
-          <AnimatedItem animation="slideInRight" delay={0.1}>
+          <AnimatedItem
+            animation="slideInRight"
+            delay={0.1}
+            onClick={() => router.push(`/posts/${posts[20].id}`)}
+          >
             <RightBlog
               image={posts[20].image}
               title={posts[20]?.title}
@@ -92,6 +103,7 @@ export default function Blogs({
         animation="scaleIn"
         delay={0.1}
         className="flex flex-col xl:flex-row mt-8 gap-8 cursor-pointer"
+        onClick={() => router.push(`/posts/${posts[30].id}`)}
       >
         <div className="w-full h-64 md:h-80 mb-4">
           <Image
