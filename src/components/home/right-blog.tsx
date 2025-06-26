@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import BlogContent from "@/components/home/blog-content";
 
 export default function RightBlog({
@@ -8,7 +8,7 @@ export default function RightBlog({
   author,
   description,
 }: {
-  image: StaticImageData;
+  image: string;
   title: string;
   date: string;
   author: string;
@@ -21,7 +21,7 @@ export default function RightBlog({
           src={image}
           alt={author}
           fill
-          className="object-cover"
+          className="shadow-lg object-cover"
           sizes="(max-width: 768px) 100vw, 192px"
         />
       </div>

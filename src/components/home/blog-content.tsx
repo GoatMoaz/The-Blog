@@ -23,7 +23,7 @@ export default function BlogContent({
       </p>
 
       <div className="flex justify-between items-center">
-        <h1 className="font-semibold text-2xl py-3">{title}</h1>
+        <h1 className="font-semibold text-2xl my-3 line-clamp-2">{title}</h1>
       </div>
       <p className="text-content-primary line-clamp-3">{description}</p>
       <div className="flex gap-2 mt-7">
