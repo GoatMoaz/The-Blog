@@ -75,7 +75,7 @@ export default function PostContent({ post }: { post: Post }) {
       {/* Author Info */}
       <AnimatedItem animation="fadeIn" delay={0.6}>
         <div className="mt-12 p-6 bg-muted rounded-lg">
-          <h3 className="font-semibold text-lg mb-2">About the Author</h3>
+          <h1 className="font-semibold text-lg mb-2">About the Author</h1>
           <p className="text-muted-foreground">
             User {post.userId} is a passionate writer and content creator who
             enjoys sharing insights and experiences through engaging blog posts.
