@@ -10,14 +10,14 @@ export default function PostsLoader({
       {/* Header skeleton */}
       <div className="text-center mb-12">
         <div className="animate-pulse bg-gray-200 dark:bg-gray-700 rounded h-12 w-64 mx-auto mb-4"></div>
-        <div className="animate-pulse bg-gray-200 dark:bg-gray-700 rounded h-6 w-96 mx-auto"></div>
+        <div className="animate-pulse bg-gray-200 dark:bg-gray-700 rounded h-6 w-full sm:w-96 mx-auto"></div>
       </div>
 
       {/* Posts grid skeleton */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {Array.from({ length: numberOfPosts }).map((_, index) => (
           <div key={index} className="space-y-4">
-            <BlogSkeleton />
+            <BlogSkeleton showImage={true} />
           </div>
         ))}
       </div>
